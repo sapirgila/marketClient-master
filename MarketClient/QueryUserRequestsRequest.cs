@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public class QueryAllMarketRequest
+    public class QueryUserRequestsRequest
     {
         public string type;
-        public QueryAllMarketRequest (string type)
+        public QueryUserRequestsRequest()
         {
-            this.type = type;
+            this.type = "queryUserRequests";
         }
     }
 }

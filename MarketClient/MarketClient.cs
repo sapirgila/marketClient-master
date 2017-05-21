@@ -15,8 +15,8 @@ namespace MarketClient
         {
             SimpleHTTPClient client = new SimpleHTTPClient();
             Token myToken = new Token();
-            string token=myToken.CreatToken();
-            BuyRequest request = new BuyRequest(price,amount,"buy",commodity);
+            string token = myToken.CreatToken();
+            BuyRequest request = new BuyRequest(price, amount, "buy", commodity);
             string response = client.SendPostRequest("http://ise172.ise.bgu.ac.il", "user26", token, request);
             try
             {
@@ -29,7 +29,7 @@ namespace MarketClient
             }
 
         }
-     
+
         public int SendSellRequest(int price, int commodity, int amount)
         {
             SimpleHTTPClient client = new SimpleHTTPClient();
@@ -65,7 +65,7 @@ namespace MarketClient
             Token myToken = new Token();
             string token = myToken.CreatToken();
             UserQuery request = new UserQuery("queryUser");
-            MarketUserData response = client.SendPostRequest<UserQuery,MarketUserData>("http://ise172.ise.bgu.ac.il", "user26", token, request);
+            MarketUserData response = client.SendPostRequest<UserQuery, MarketUserData>("http://ise172.ise.bgu.ac.il", "user26", token, request);
             return response;
         }
         public MarketItemQuery SendQueryBuySellRequest(int id)
@@ -73,7 +73,7 @@ namespace MarketClient
             SimpleHTTPClient client = new SimpleHTTPClient();
             Token myToken = new Token();
             string token = myToken.CreatToken();
-            BuySellQuery request = new BuySellQuery("queryBuySell",id);
+            BuySellQuery request = new BuySellQuery("queryBuySell", id);
             MarketItemQuery response = client.SendPostRequest<BuySellQuery, MarketItemQuery>("http://ise172.ise.bgu.ac.il", "user26", token, request);
             return response;
         }
@@ -101,9 +101,9 @@ namespace MarketClient
             SimpleHTTPClient client = new SimpleHTTPClient();
             Token myToken = new Token();
             string token = myToken.CreatToken();
-            QueryAllMarketRequest request = new QueryAllMarketRequest();
+            QueryAllMarketRequest request = new QueryAllMarketRequest("queryAllMarket");
             MarketRequestObject[] response = client.SendPostRequest<QueryAllMarketRequest, MarketRequestObject[]>("http://ise172.ise.bgu.ac.il", "user26", token, request);
             return response;
-        }
+        } 
     }
 }

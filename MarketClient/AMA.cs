@@ -9,8 +9,11 @@ using MarketClient.Utils;
 
  namespace MarketClient
 {
+    
     public class AMA
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger("mainLogger");
+        private static readonly log4net.ILog log2 = log4net.LogManager.GetLogger("LoggerOfHistoryRequests");
         Timer myTimer;
         //arrays for keeping track on movements in the market
         int[,] marketScanForBuying;
@@ -25,7 +28,7 @@ using MarketClient.Utils;
         //in selling marketScan        nameOfCommoditie   index Of The Latest Price Change In Our Faver   price 1   < price 2  < price 3 --> SELL!
         public AMA()
         {
-            myTimer = new Timer(13000);
+            myTimer = new Timer(20000);
             client = new MarketClient();
             MarketUserData myData= client.SendQueryUserRequest();
             commoditiesNames = myData.getCommoditiesNames();
@@ -36,8 +39,8 @@ using MarketClient.Utils;
             foreach (string k in commoditiesNames)
             {
                 //cell 0 holds name of commities
-                marketScanForBuying[0, i] = int.Parse(k);
-                marketScanForSelling[0, i] = int.Parse(k);
+                marketScanForBuying[i, 0] = int.Parse(k);
+                marketScanForSelling[i, 0] = int.Parse(k);
                 i++;
             }
         }
@@ -66,7 +69,7 @@ using MarketClient.Utils;
             int index;
             int latestMarketAcquisitionReceipt, latestMarketSellingReceipt;
             //Auto-pilot in charge of buying if a commoditie show a decline in price
-            for (int i = 0; i < marketScanForBuying.Length; i++)
+            for (int i = 0; i < marketScanForBuying.GetLength(0); i++)
             {
                 offerOnTheMarket = client.SendQueryMarketRequest(marketScanForBuying[i,0]);
                 currentPriceOnTheMarket = offerOnTheMarket.getAskedPrice();
@@ -94,7 +97,7 @@ using MarketClient.Utils;
                 }
             }
             //Auto-pilot in charge of selling if a commoditie show a rise in asked price
-            for (int i = 0; i < marketScanForSelling.Length; i++)
+            for (int i = 0; i < marketScanForSelling.GetLength(0); i++)
             {
                 offerOnTheMarket = client.SendQueryMarketRequest(marketScanForSelling[i, 0]);
                 currentPriceOnTheMarket = offerOnTheMarket.getAskedPrice();
@@ -126,6 +129,6 @@ using MarketClient.Utils;
         public void AMA_StopAutoPilot()
         {
             myTimer.Stop();
-        }
-    }
+        } 
+    } 
 }

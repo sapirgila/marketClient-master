@@ -23,7 +23,7 @@ namespace MarketClient.DataEntries
         }
         public override string ToString()
         {
-            string output = "The price is:" + price + "\nThe amount is:" + amount + "\nThe type of the request is:" + type + "\nThe user is:" + user + "\nThe commodite id is:" + commodity;
+            string output = "The price is:" + price + "\nThe amount is: " + amount + "\nThe type of the request is: " + type + "\nThe user is: " + user + "\nThe commodity id is: " + commodity;
             return output;
         }
 

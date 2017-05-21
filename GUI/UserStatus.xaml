@@ -1,0 +1,20 @@
+﻿<Window x:Class="GUI.UserStatus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI"
+             mc:Ignorable="d" Height="650.929" Width="976.335">
+    <Window.Background>
+        <ImageBrush ImageSource="images/Forex.jpg" />
+    </Window.Background>
+    <Grid Margin="48,51,-6,0.333">
+        <Label x:Name="label1" Content="Commodities List:" HorizontalAlignment="Left" Margin="27,59,0,0" VerticalAlignment="Top" Foreground="Red" FontFamily="Showcard Gothic" FontSize="22"/>
+        <TextBox x:Name="FundsTB" HorizontalAlignment="Left" Height="37" Margin="377,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310"/>
+        <Label x:Name="label1_Copy" Content="Funds:" HorizontalAlignment="Left" Margin="155,184,0,0" VerticalAlignment="Top" Foreground="Red" FontFamily="Showcard Gothic" FontSize="22"/>
+        <Label x:Name="label1_Copy1" Content="Requests List:" HorizontalAlignment="Left" Margin="68,246,0,0" VerticalAlignment="Top" Foreground="Red" FontFamily="Showcard Gothic" FontSize="22"/>
+        <ListBox x:Name="listBox2" HorizontalAlignment="Left" Height="153" Margin="377,10,-0.4,0" VerticalAlignment="Top" Width="320"/>
+        <ListBox x:Name="listBox3" HorizontalAlignment="Left" Height="252" Margin="377,246,-0.4,-101.6" VerticalAlignment="Top" Width="320"/>
+
+    </Grid>
+</Window>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarketClient
 {
- public class UserRequest
+    public class UserRequest
     {
         public MarketItemQuery request;
         public int id;
@@ -15,7 +15,7 @@ namespace MarketClient
         public override string ToString()
 
         {
-            string s = "request: " + request +"id: " + id;
+            string s = "request: " + request + "id: " + id;
             return s;
         }
     }

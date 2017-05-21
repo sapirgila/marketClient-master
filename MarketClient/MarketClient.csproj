@@ -34,9 +34,21 @@
     <Reference Include="BouncyCastle.Crypto">
       <HintPath>.\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="slf4net, Version=0.1.14.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\slf4net.0.1.14.1\lib\net35\slf4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="slf4net.log4net, Version=0.1.32.1, Culture=neutral, PublicKeyToken=592edb3b6b36b5ba, processorArchitecture=MSIL">
+      <HintPath>..\packages\slf4net.log4net.0.1.32.1\lib\net35\slf4net.log4net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,11 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AMA.cs" />
-    <Compile Include="LegalInput.cs" />
+    <Compile Include="MarketAllRequests.cs" />
+    <Compile Include="MarketHistory.cs" />
     <Compile Include="MarketItemQuery.cs" />
     <Compile Include="MarketClient.cs" />
     <Compile Include="MarketRequestObject.cs" />
     <Compile Include="MarketUserData.cs" />
+    <Compile Include="QueryUserRequestsRequest.cs" />
     <Compile Include="SimpleHTTPClient.cs" />
     <Compile Include="Token.cs" />
     <Compile Include="MarketCommodityOffer.cs" />
@@ -75,6 +89,10 @@
       <Project>{4f8f8a74-cee2-46a4-9cb4-12f803a68308}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

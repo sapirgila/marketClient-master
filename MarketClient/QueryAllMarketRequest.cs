@@ -9,9 +9,9 @@ namespace DataLayer
     public class QueryAllMarketRequest
     {
         public string type;
-        public QueryAllMarketRequest (string type)
+        public QueryAllMarketRequest()
         {
-            this.type = type;
+            this.type = "queryAllMarket";
         }
     }
 }

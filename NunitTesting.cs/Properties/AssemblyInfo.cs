@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PresentationLayer")]
+[assembly: AssemblyTitle("NunitTesting.cs")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PresentationLayer")]
+[assembly: AssemblyProduct("NunitTesting.cs")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2c47ce1f-2f8b-44f1-821c-aa0068b66a8f")]
+[assembly: Guid("5e0b6d05-00ea-4a22-8e18-e4dcf20eb72d")]
 
 // Version information for an assembly consists of the following four values:
 //

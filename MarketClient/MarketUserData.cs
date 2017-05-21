@@ -11,6 +11,7 @@ namespace MarketClient
     {
         private Dictionary<string, int> commodities;
         //add a function to show the user only the commodites with a int diffrent than 0
+        //add a function to show all commodities keys(only the string with no int)
         private double funds;
         private List<int> requests;
 
@@ -21,11 +22,16 @@ namespace MarketClient
             this.requests = requests;
 
         }
-        // a function to show all commodities keys(only the string with no int)
+        public List<int> getRequestsList () {
+            return requests;
+        }
         public List<string> getCommoditiesNames()
         {
             List<string> list = new List<string>(this.commodities.Keys);
             return list;
+        }
+        public double getFunds() {
+            return funds;
         }
         public Dictionary<string, int> getCommodities()
         {
@@ -38,9 +44,9 @@ namespace MarketClient
             {
                 for (int i = 0; i < requests.Count(); i++) { output = output + requests[i] + "\n"; }
             }
-            else { output = output + "Your requests list is empty for now"; }
+            else { output = output + "Your requests list is empty for now" +"\n"; }
 
-            output = output + "This is the commodities list:\n";
+            output = output + "This are the commodities list:\n";
             foreach (KeyValuePair<string, int> kvp in commodities)
             {
                 output = output + "Key= " + kvp.Key + ", Value = " + kvp.Value + "\n";

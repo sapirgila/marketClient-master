@@ -23,7 +23,7 @@ namespace MarketClient
                     {
                         flag = 0;
                     }
-                    if ((temp <= 0) && (flag == 1)) 
+                    if ((temp <= 0) && (flag == 1))
                     {
                         Console.WriteLine("Please Enter Just A Legal Input Number Value");
                     }
